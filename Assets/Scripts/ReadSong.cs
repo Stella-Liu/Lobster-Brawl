@@ -1,18 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ReadSong : MonoBehaviour {
-
     public AudioSource audio1;
+    public ReadText timeStamp;
+    public Generator generator;
 
-	// Use this for initialization
-	void Start () {
-        audio1 = GetComponent<AudioSource>();
+    List<float> timeStampArr;
+    int index = 0;
+
+    // Use this for initialization
+    void Start () {
+        timeStampArr = timeStamp.getTimeStamp();
+        audio1.Play();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        audio1.Play();
-        Debug.Log(audio1.time);
+        if (audio1.isPlaying && timeStampArr.Count != index)
+        {
+            float time = (Mathf.Floor(audio1.time * 10) / 10) + 0.1f;
+            float newTime = timeStampArr[index];
+            if (newTime == time)
+            {
+                Debug.Log(newTime + "--" + time);
+                generator.make = true;
+                index++;
+            }
+        }
     }
 }

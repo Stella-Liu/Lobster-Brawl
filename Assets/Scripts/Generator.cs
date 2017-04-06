@@ -13,21 +13,22 @@ public class Generator : MonoBehaviour {
     List<MoveButton> buttons1 = new List<MoveButton>();
     List<MoveButton> buttons2 = new List<MoveButton>();
 
+    public bool make = false;
+
     // Use this for initialization
     void Start () {
-        StartCoroutine(onCoroutine());
     }
 	
-    IEnumerator onCoroutine()
+    void Update()
     {
-        while (true)
+        if (make)
         {
             Create();
-            yield return new WaitForSeconds(0.7f);
+            make = false;
         }
     }
 
-    void Create()
+    public void Create()
     {
         int randNum = Random.Range(0, 4);
         MoveButton obj1 = null;
@@ -41,14 +42,14 @@ public class Generator : MonoBehaviour {
 
         else if (randNum == 1)
         {
-            obj1 = (MoveButton)Instantiate(square, new Vector3(-19.67f, 1.05f, 0), Quaternion.identity);
-            obj2 = (MoveButton)Instantiate(square, new Vector3(19.67f, 1.05f, 0), Quaternion.identity);
+            obj1 = (MoveButton)Instantiate(square, new Vector3(-19.67f, -0.98f, 0), Quaternion.identity);
+            obj2 = (MoveButton)Instantiate(square, new Vector3(19.67f, -0.98f, 0), Quaternion.identity);
         }
 
         else if (randNum == 2)
         {
-            obj1 = (MoveButton)Instantiate(circle, new Vector3(-19.67f, -0.98f, 0), Quaternion.identity);
-            obj2 = (MoveButton)Instantiate(circle, new Vector3(19.67f, -0.98f, 0), Quaternion.identity);
+            obj1 = (MoveButton)Instantiate(circle, new Vector3(-19.67f, 1.05f, 0), Quaternion.identity);
+            obj2 = (MoveButton)Instantiate(circle, new Vector3(19.67f, 1.05f, 0), Quaternion.identity);
         }
 
         else if (randNum == 3)
