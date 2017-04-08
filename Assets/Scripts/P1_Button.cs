@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class P1_Button : MonoBehaviour {
 
-    KeyCode triangle = KeyCode.Joystick2Button3;
-    KeyCode square = KeyCode.Joystick2Button0;
-    KeyCode circle = KeyCode.Joystick2Button2;
-    KeyCode x = KeyCode.Joystick2Button1;
+    private KeyCode triangle = KeyCode.Joystick2Button3;
+    private KeyCode square = KeyCode.Joystick2Button0;
+    private KeyCode circle = KeyCode.Joystick2Button2;
+    private KeyCode x = KeyCode.Joystick2Button1;
 
     public Generator arr;
-    List<MoveButton> buttons1;
+    public List<MoveButton> buttons1;
 
     // Use this for initialization
     void Start () {
