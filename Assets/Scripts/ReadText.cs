@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ReadText : MonoBehaviour{
+
     private TextAsset textFile;
     List<float> timeStampArr = new List<float>();
 

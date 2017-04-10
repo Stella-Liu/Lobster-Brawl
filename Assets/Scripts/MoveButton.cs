@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveButton : MonoBehaviour {
+public class MoveButton : MonoBehaviour
+{
 
-    float speed = 10f;
+    public float speed = 10f;
     public bool inRange;
 
     private float x;
     private float y;
 
-    public bool hit;
-    public bool miss;
+    public bool? isHit = null;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         x = transform.position.x;
         y = transform.position.y;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         //Goes from their position to the center
-        if(x > 0)
+        if (x > 0)
         {
             x -= speed * Time.deltaTime;
         }

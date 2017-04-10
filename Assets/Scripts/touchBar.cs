@@ -18,7 +18,6 @@ public class touchBar : MonoBehaviour {
     {
         if(other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
-            //Debug.Log("inRange");
             other.gameObject.GetComponent<MoveButton>().inRange = true;
         }
     }
@@ -28,7 +27,6 @@ public class touchBar : MonoBehaviour {
     {
         if (other.gameObject.tag == "Triangle" || other.gameObject.tag == "Square" || other.gameObject.tag == "Circle" || other.gameObject.tag == "X")
         {
-            //Debug.Log("not inRange");
             other.gameObject.GetComponent<MoveButton>().inRange = false;
         }
     }
